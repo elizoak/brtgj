@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/core/home/home.component';
-import { SharedModule } from './components/shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './components/core/header/header.component';
 
 

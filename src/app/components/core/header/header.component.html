@@ -5,6 +5,7 @@
               <nav class="navbar navbar-expand-md">
                   <a class="navbar-brand" href="index.html">
                       <img src="images/logo.png" alt="" width="150px">
+                      Btc Pro
                   </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="tf-ion-android-menu"></span>
@@ -12,33 +13,33 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
                           <li class="nav-item active">
-                              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                              <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="pricing.html">Buy/Sell</a>
+                              <a class="nav-link"routerLink="#">Affilate Program</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="faq.html">F.A.Q</a>
+                              <a class="nav-link" routerLink="#">Payout</a>
                           </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="contact.html">Contact</a>
+                          <li class="nav-item"> 
+                              <a class="nav-link" routerLink="#">FAQ</a>
                           </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="login.html">Sign In</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="signup.html">Sign Up</a>
-                          </li>
-
-                          <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Pages
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="team.html">Team Page</a>
-                                  <a class="dropdown-item" href="404.html">404 Page</a>
-                              </div>
-                          </li>
+                          <ng-container *ngIf="!userStatus">
+                              <li class="nav-item">
+                                  <a class="nav-link" routerLink="/login">Login</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" routerLink="/sign-up">Sign Up</a>
+                              </li>
+                          </ng-container>
+                          <ng-container *ngIf="userStatus">
+                              <li class="nav-item" >
+                                  <a class="nav-link" (click)="logout()" >Logout</a>
+                              </li>
+                              <li class="nav-item user" >
+                                  <a class="nav-link" >Hi {{ username}}</a>
+                              </li>
+                          </ng-container>
                       </ul>
                   </div>
               </nav>

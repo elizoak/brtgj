@@ -1,0 +1,34 @@
+<section class="signin-page account">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="block text-center">
+          <h2 class="text-center">Create Your Account</h2>
+          <form class="text-left clearfix mt-30" [formGroup]='form' (ngSubmit)='signUpWithEmail(form)'>
+              <div *ngIf='form.errors && email.valid && password.valid' class="text-danger">
+                  {{error}}
+              </div>
+            <div class="form-group">  
+              <input type="text" class="form-control"  placeholder="First Name" formControlName='firstname'>
+            </div> 
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Last Name" formControlName='lastname'>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Wallet Address" formControlName='walletId'>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control"  placeholder="Email" formControlName='email'>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control"  placeholder="Password" formControlName='password'>
+            </div>
+            <button type="submit" class="btn btn-main text-center">Sign In</button>
+          </form>
+          <p class="mt-20">Already hava an account ?<a routerLink="/login"> Login</a></p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
