@@ -30,8 +30,8 @@ export class HomeComponent implements OnInit {
         });
     }
     clock() {
-        this.time  = this.time + 0.00000001;
-        console.log(this.time);
+        this.time  = this.time + 0.0001;
+   //     console.log(this.time);
         this.timestorage =  JSON.stringify(this.time);
         localStorage.setItem('btcpro', this.timestorage);
         this.timestorage = JSON.parse(localStorage.getItem('btcpro'));

@@ -22,7 +22,11 @@
             "styles": [
                 "styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+                "./assets/temp/plugins/jquery/dist/jquery.min.js",
+                "./assets/temp/plugins/bootstrap/dist/js/popper.min.js",
+                "./assets/temp/plugins/bootstrap/dist/js/bootstrap.min.js"
+            ],
             "environmentSource": "environments/environment.ts",
             "environments": {
                 "dev": "environments/environment.ts",
