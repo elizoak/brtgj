@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import * as firebase from 'firebase';
 import { IUser } from '../model/user.model';
-import { userInfo } from 'os';
+
 
 @Injectable()
 export class UserService {
@@ -20,6 +20,8 @@ export class UserService {
       lastname: datas.lastname,
       walletId : datas.walletId,
       password: datas.password,
+      balance: 0.00000001,
+      speedRate: 0.00000001
     });
   }
   get(uid: string): FirebaseObjectObservable<IUser> {

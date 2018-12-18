@@ -1,3 +1,156 @@
+<section class="call-to-action section-sm" *ngIf="userStatus">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+                <img src="https://media.giphy.com/media/LukAHGCMfxMbK/giphy.gif" style="width:80px" 
+                alt="bitcoin">
+				<h1>Balance: {{ balance | number:"1.8-8"}} BTC</h1>
+                <button href="" class="btn btn-primary btn-lg">Withdraw</button>
+                <a routerLink="/account" class="btn btn-info btn-lg">Account</a>
+			</div>
+		</div> 		<!-- End row -->
+	</div>   	<!-- End container -->
+</section>
+<section class="call-to-action section-sm" *ngIf="!userStatus">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2>Open account for free and start trading Bitcoins now!</h2>
+				<p> open an acoount now an gain unlimited bitcoin
+                    on our bitcoin mining platform you just to invest a 
+                    little bitcoin to increase the rate at which you gain
+                    .</p>
+				<a routerLink="/sign-up" class="btn btn-main">Get Started</a>
+			</div>
+		</div> 
+	</div>   	
+</section>
+<section class="services section-xs"  id="services">
+	<div class="container">
+		<div class="row">
+			<!-- Single Service Item -->
+			<div class="col-md-4 col-sm-6 col-xs-12" >
+				<div class="service-block color-bg text-center">
+					<div class="service-icon text-center">
+						<img src="/assets/temp/images/icons/bitcoin-safety-shield.png" alt="">
+					</div>
+                    <h3>Easy & Secure</h3>
+                    <p>your account is and secured with us the authentication 
+                        all well structed and built
+                    </p>
+				</div>
+			</div>
+			<!-- End Single Service Item -->
+			
+			<!-- Single Service Item -->
+			<div class="col-md-4 col-sm-6 col-xs-12" >
+				<div class="service-block text-center">
+					<div class="service-icon text-center">
+						<img src="/assets/temp/images/icons/bitcoin-exchange.png" alt="">
+					</div>
+                    <h3>Invest Your Bitcion</h3>
+                    <p>invest as low as 0.001 bitcoin in your account to increase
+                        the rate at which you gain bitcoin per day 
+                    </p>
+							</div>
+			</div>
+			<!-- End Single Service Item -->
+			
+			<!-- Single Service Item -->
+			<div class="col-md-4 col-sm-6 col-xs-12 mx-auto"  >
+				<div class="service-block color-bg text-center">
+					<div class="service-icon text-center">
+						<img src="/assets/temp/images/icons/bitcoin-network.png" alt="">
+					</div>
+                    <h3>Gain More Bitcoin</h3>
+                    <p>gain more per day after invest your bitcoin on our platform
+                        the rate at which you invest increase the rate at which you gain
+                    </p>
+				</div>
+			</div>
+  
+            <!-- End Single Service Item -->
+		</div> 		<!-- End row -->
+	</div>   	<!-- End container -->
+</section>  
+<section class="pricing-table  section" id="pricing">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title text-center">
+                 
+                    <h2>Choose Your Version.</h2>
+                    <span class="border"></span>
+                    <p>Choose premium version below to increase your affiliate program bonus and earn much more!</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12" >
+                            <div class="pricing-item">
+                                <h3>Get 0.112 ETH</h3>
+                                <div class="pricing-body">
+                                    <div class="price">
+                                        <span>€803</span>
+                                        <span class="sup">95</span>
+                                    </div>
+                                    <div class="progress" style="height: 3px;">
+                                        <div class="progress-bar"style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p>You get 0.0364727 Bitcoins</p>
+                                    <a class="btn btn-main" href="#">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" >
+                            <div class="pricing-item">
+                                <h3>Get 0.112 ETH</h3>
+                                <div class="pricing-body">
+                                    <div class="price">
+                                        <span>€283</span>
+                                        <span class="sup">15</span>
+                                    </div>
+                                    <div class="progress" style="height: 3px;">
+                                        <div class="progress-bar"style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p>You get 0.0364727 Bitcoins</p>
+                                    <a class="btn btn-main" href="#">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" >
+                            <div class="pricing-item">
+                                <h3>Get 0.112 ETH</h3>
+                                <div class="pricing-body">
+                                    <div class="price">
+                                        <span>€122</span>
+                                        <span class="sup">00</span>
+                                    </div>
+                                    <div class="progress" style="height: 3px;">
+                                        <div class="progress-bar"style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p>You get 0.0364727 Bitcoins</p>
+                                    <a class="btn btn-main" href="#">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Tik</div>
+            </div>
+                
+            </div>
+        </div>
+
+
+    </div>   	<!-- End container -->
+</section>
+<!-- 
 <h2>Welcome to home section</h2>
 <h3><b>Balance:</b> {{ timestorage | number:"1.8-9"}}BTC</h3>
-<img src="../../../assets/angular-logo.png" alt="">
+<img src="../../../assets/angular-logo.png" alt=""> -->

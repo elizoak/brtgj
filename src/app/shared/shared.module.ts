@@ -1,3 +1,4 @@
+import { WalletService } from './services/wallet.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
   declarations: [],
   providers: [
     AuthService,
-    UserService
+    UserService,
+    WalletService
   ]
 })
 export class SharedModule { }

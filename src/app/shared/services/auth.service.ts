@@ -21,8 +21,6 @@ export class AuthService {
     this.user$ = this.afAuth.authState;
    }
    signUpWithEmail(email: string, password: string) {
-    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
-    localStorage.setItem('returnUrl', returnUrl);
     console.log(this.user$);
     if (this.user$ instanceof Observable) {
       this.user$.subscribe(user => {
@@ -46,8 +44,6 @@ export class AuthService {
   }
 
   loginWithEmail(email: string, password: string) {
-    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
-    localStorage.setItem('returnUrl', returnUrl);
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
         this.user$ = user;

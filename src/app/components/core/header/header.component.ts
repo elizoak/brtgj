@@ -19,10 +19,12 @@ export class HeaderComponent implements OnInit {
     private authSrv: AuthService) {
     this.afAuth.authState.subscribe(auth => {
       this.userStatus = auth;
+    if (auth) {
       this.userSrv.getUser(auth).subscribe(user => {
         this.username = user.name;
       }
       );
+    }
     });
   }
 
