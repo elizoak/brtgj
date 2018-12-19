@@ -4,24 +4,40 @@
       <div class="col-md-6 mx-auto">
         <div class="block text-center">
           <h2 class="text-center">Create Your Account</h2>
-          <form class="text-left clearfix mt-30" [formGroup]='form' (ngSubmit)='signUpWithEmail(form)'>
+          <form class="text-left text-danger clearfix mt-30" [formGroup]='form' (ngSubmit)='signUpWithEmail(form)'>
               <div *ngIf='form.errors && email.valid && password.valid' class="text-danger">
                   {{error}}
               </div>
             <div class="form-group">  
               <input type="text" class="form-control"  placeholder="First Name" formControlName='firstname'>
+              <span *ngIf="firstname.invalid && firstname.touched">
+                firstname is required
+              </span>
             </div> 
             <div class="form-group">
               <input type="text" class="form-control"  placeholder="Last Name" formControlName='lastname'>
+              <span *ngIf="lastname.invalid && lastname.touched">
+                  lastname is required
+                </span>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  placeholder="Wallet Address" formControlName='walletId'>
+              <input type="text" class="form-control"  placeholder="Wallet Id" formControlName='walletId'>
+              <span *ngIf="walletId.invalid && walletId.touched">
+                  walletId is required
+                </span>
             </div>
             <div class="form-group">
               <input type="email" class="form-control"  placeholder="Email" formControlName='email'>
+              <span *ngIf="email.invalid && email.touched">
+                  email is required
+                </span>
             </div>
             <div class="form-group">
               <input type="password" class="form-control"  placeholder="Password" formControlName='password'>
+              <span *ngIf="password.invalid && password.touched">
+                  <span *ngIf="password.errors.required">password is required</span>
+                  <span *ngIf="password.errors.minlength">password must be up to 4 charcaters</span>
+                </span>
             </div>
             <button type="submit" class="btn btn-main text-center">Sign In</button>
           </form>

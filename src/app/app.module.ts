@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/core/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './components/core/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { HeaderComponent } from './components/core/header/header.component';
         CommonModule,
         AppRoutingModule,
         HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
         SharedModule
     ],
     providers: []

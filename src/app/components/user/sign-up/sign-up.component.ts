@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
             [ Validators.required ]),
     email: new FormControl('', Validators.required),
     password: new FormControl(
-        '', [Validators.required]
+        '', [Validators.required, Validators.minLength(4)]
         )
   });
   ngOnInit() {

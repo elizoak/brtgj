@@ -5,13 +5,23 @@
               <div class="block">
                   <h2 class="text-center">Sign In to BitBank</h2>
                   
-                  <form class="text-left clearfix mt-50" [formGroup]='form' (ngSubmit)='loginInWithEmail(form)' >
+                  <form class="text-left text-danger clearfix mt-50" [formGroup]='form' (ngSubmit)='loginInWithEmail(form)' >
+                        <div *ngIf='form.errors && email.valid && password.valid' class="text-danger">
+                                {{error}}
+                            </div> 
                       <div class="form-group">
                           <input type="email" class="form-control"  placeholder="Email" formControlName='email'>
+                          <span *ngIf="email.invalid && email.touched">
+                            Email is required
+                          </span>
                       </div>
                       <div class="form-group">
                           <input type="password" class="form-control" placeholder="Password" formControlName='password'>
-                      </div>
+                            <span *ngIf="password.invalid && password.touched">
+                                <span *ngIf="password.errors.required">Password is required</span>
+                                <span *ngIf="password.errors.minlength">Password must be up to 4 characters</span>
+                            </span>
+                        </div>
                       <button type="submit" class="btn btn-main" >Sign In</button>
                       
                   </form>

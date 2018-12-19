@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { UserService } from '../../../shared/services/user.service';
-import { Router } from '@angular/router';
-import { AuthService } from '../../../shared/services/auth.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
 import { WalletService } from '../../../shared/services/wallet.service';
 
@@ -13,8 +11,7 @@ import { WalletService } from '../../../shared/services/wallet.service';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-
+    showWithdraw = false;
     time = 0.00000000;
     timestorage;
     userStatus;
@@ -24,22 +21,46 @@ export class HomeComponent implements OnInit {
       private userSrv: UserService,
       private walletSrv: WalletService) {
     }
+    form = new FormGroup({
+      amount: new FormControl('',
+        [Validators.required])
+    });
+    get amount() {
+      return this.form.get('amount');
+    }
     ngOnInit() {
-      this.afAuth.authState.subscribe(auth => {
-        this.userStatus = auth;
-      if (auth) {
-    Observable.interval(2000).subscribe(x => {
-      this.walletSrv.fundWallet(auth, 0.0001);
-   });
-   this.userSrv.getUser(this.userStatus).subscribe(user => {
-    this.balance = user.balance;
-  });
-      }
-      });
+          this.afAuth.authState.subscribe(auth => {
+            this.userStatus = auth;
+          if (auth) {
         Observable.interval(2000).subscribe(x => {
-             this.clock();
-
+          this.walletSrv.fundWallet(auth, 0.0001);
+        });
+      this.userSrv.getUser(this.userStatus).subscribe(user => {
+        this.balance = user.balance;
+        });
+          }
           });
+    }
+    withdraw() {
+      this.showWithdraw = true;
+    }
+    cancelWithdraw() {
+      this.showWithdraw = false;
+    }
+    withdrawBTC(form) {
+      if (form.valid) {
+        let amount = this.amount.value;
+        if (amount >= 0.0035 && amount < 0.0087) {
+          console.log('withdraw');
+          this.walletSrv.withdrawFund(this.userStatus, this.balance, amount)
+            .then(() => console.log('withdraw successful'))
+            .catch(err => console.log(err));
+        } else if (amount > 0.0087) {
+          console.log('amount is too large');
+        } else {
+          console.log('insufficient fund');
+        }
+      }
     }
     clock() {
         this.time  = this.time + 0.00000001;

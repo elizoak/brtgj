@@ -26,6 +26,11 @@ export class WalletService {
      balance: speedrate  + blance || 0.00000001
     });
   }
+  withdrawFund(user: firebase.User, balance, amount) {
+    return this.db.object('/users/' + user.uid).update({
+      balance: balance - amount
+    });
+  }
 
 
 

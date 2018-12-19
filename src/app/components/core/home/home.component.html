@@ -1,17 +1,44 @@
-<section class="call-to-action section-sm" *ngIf="userStatus">
+<section class="call-to-action section-sm" *ngIf="!userStatus">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
                 <img src="https://media.giphy.com/media/LukAHGCMfxMbK/giphy.gif" style="width:80px" 
                 alt="bitcoin">
-				<h1>Balance: {{ balance | number:"1.8-8"}} BTC</h1>
-                <button href="" class="btn btn-primary btn-lg">Withdraw</button>
-                <a routerLink="/account" class="btn btn-info btn-lg">Account</a>
+                <ng-container *ngIf="!showWithdraw">
+                    <h1>Balance: {{ balance | number:"1.8-8"}} BTC</h1>
+                    <button (click)="withdraw()" class="btn btn-primary btn-lg">Withdraw</button>
+                    <a routerLink="/account" class="btn btn-info btn-lg">Account</a>
+                </ng-container>
+                <ng-container *ngIf="showWithdraw"> 
+                    <form class="custom-pricing-form" [formGroup]='form' (ngSubmit)="withdrawBTC(form)">
+                        <h3 class="text-center">You can also input a custom amount:</h3>
+                        <div class="form-row align-items-center">    
+                            <div class="offset-md-2 col-md-4 mb-1">
+                                <input type="number" class="form-control " id="inlineFormInput" placeholder="BTC" formControlName='amount'>
+                                <span *ngIf="amount.invalid && amount.touched" class="text-danger">
+                                    amount is required
+                                </span>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-sm-3 mb-2">
+                                        <button type="submit" class="btn btn-warning ">Withdraw</button>
+                                    </div>
+                                    <div class="col-sm-3 mb-2">
+                                        <button (click)="cancelWithdraw()" type="button" class="btn btn-secondary ">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </ng-container> 
 			</div>
-		</div> 		<!-- End row -->
-	</div>   	<!-- End container -->
+		</div> 		
+    </div>
+    	
 </section>
-<section class="call-to-action section-sm" *ngIf="!userStatus">
+<section class="call-to-action section-sm" *ngIf="userStatus">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
