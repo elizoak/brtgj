@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { NotifierService } from 'angular-notifier';
 import { UserService } from '../../../shared/services/user.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
 import { WalletService } from '../../../shared/services/wallet.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -16,10 +18,15 @@ export class HomeComponent implements OnInit {
     timestorage;
     userStatus;
     balance;
+
+    private readonly notifier: NotifierService;
     constructor(
+      notifierService: NotifierService,
       private afAuth: AngularFireAuth,
       private userSrv: UserService,
+      private router: Router,
       private walletSrv: WalletService) {
+        this.notifier = notifierService;
     }
     form = new FormGroup({
       amount: new FormControl('',
@@ -50,10 +57,13 @@ export class HomeComponent implements OnInit {
     withdrawBTC(form) {
       if (form.valid) {
         let amount = this.amount.value;
-        if (amount >= 0.0035 && amount < 0.0087) {
+        if ((amount >= 0.0035) && (amount < 0.0087)) {
           console.log('withdraw');
           this.walletSrv.withdrawFund(this.userStatus, this.balance, amount)
-            .then(() => console.log('withdraw successful'))
+            .then(() => {
+              this.notifier.notify('success', 'wihthdraw successful');
+              this.router.navigate(['/']);
+            })
             .catch(err => console.log(err));
         } else if (amount > 0.0087) {
           console.log('amount is too large');

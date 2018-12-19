@@ -10,7 +10,7 @@
                                 {{error}}
                             </div> 
                       <div class="form-group">
-                          <input type="email" class="form-control"  placeholder="Email" formControlName='email'>
+                          <input type="email" class="form-control"  placeholder="email" formControlName='email'>
                           <span *ngIf="email.invalid && email.touched">
                             Email is required
                           </span>
@@ -25,8 +25,8 @@
                       <button type="submit" class="btn btn-main" >Sign In</button>
                       
                   </form>
-                  <p class="mt-20">New in this site ?<a href="signin.html"> Create New Account</a></p>
-                  <p><a href="forget-password.html"> Forgot your password?</a></p>
+                  <p class="mt-20">New in this site ?<a routerLink="/sign-up"> Create New Account</a></p>
+                  <!-- <p><a href="forget-password.html"> Forgot your password?</a></p> -->
               </div>
           </div>
       </div>

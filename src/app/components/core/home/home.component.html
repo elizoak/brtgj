@@ -1,4 +1,4 @@
-<section class="call-to-action section-sm" *ngIf="!userStatus">
+<section class="call-to-action section-sm" *ngIf="userStatus">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
@@ -38,7 +38,7 @@
     </div>
     	
 </section>
-<section class="call-to-action section-sm" *ngIf="userStatus">
+<section class="call-to-action section-sm" *ngIf="!userStatus">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
@@ -177,6 +177,7 @@
 
     </div>   	<!-- End container -->
 </section>
+
 <!-- 
 <h2>Welcome to home section</h2>
 <h3><b>Balance:</b> {{ timestorage | number:"1.8-9"}}BTC</h3>
