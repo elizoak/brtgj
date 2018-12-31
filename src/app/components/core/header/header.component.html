@@ -4,11 +4,11 @@
           <div class="col-md-12">
               <nav class="navbar navbar-expand-md">
                   <a class="navbar-brand" routerLink="/">
-                      <img src="/assets/temp/images/logo.png" alt="" width="150px">
-                     
+                      <img src="http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-Bitcoin-PNG-Transparent-Image-500x502.png" alt="" style="width:80px">
+                     DailyCryptomine
                   </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="tf-ion-android-menu"></span>
+                  <span class="fas fa-bars"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
@@ -16,14 +16,18 @@
                               <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link"routerLink="#">Affilate Program</a>
+                              <a class="nav-link"routerLink="/account">Account</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" routerLink="#">Payout</a>
+                              <a class="nav-link" routerLink="/payout">Payout</a>
                           </li>
                           <li class="nav-item"> 
-                              <a class="nav-link" routerLink="#">FAQ</a>
+                              <a class="nav-link" routerLink="/faq">FAQ</a>
                           </li>
+
+                          <li class="nav-item"> 
+                            <a class="nav-link" routerLink="/testimony">Testimonies</a>
+                        </li>
                           <ng-container *ngIf="!userStatus">
                               <li class="nav-item">
                                   <a class="nav-link" routerLink="/login">Login</a>

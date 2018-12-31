@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+  <a class="navbar-brand mr-1" routerLink="/admin">DailyCryptomine</a>
+
+  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Navbar Search -->
+
+
+
+
+</nav>
+
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/admin">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/admin">
+          <i class="fas fa-fw fa-users"></i>
+          <span>User</span></a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/admin/withdraw">
+        <i class="fas fa-fw fa-money-bill"></i>
+        <span>Withdraw</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/admin">
+        <i class="fas fa-fw fa-coins"></i>
+        <span>Deposit</span></a>
+    </li>
+  </ul>
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">User</li>
+      </ol>
+
+      <!-- Icon Cards-->
+    </div>
+    <!-- /.container-fluid -->
+    <div class="container">
+       <h2>All Withdraw from users</h2>
+       <div class="table-responsive">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Amount</th>
+                <th scope="col">UserId</th>
+
+              </tr>
+            </thead>
+            <tbody *ngIf="withdraws">
+              <tr *ngFor="let wid of withdraws">
+                <td>{{wid.date | date:'medium' }}</td>
+                <td>{{wid.amount}}</td>
+                <td>{{wid.userId}}</td>
+  
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    </div> 
+
+    
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>

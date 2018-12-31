@@ -22,9 +22,11 @@ export class WalletService {
     let speedrate: number;
     balance$.subscribe(bal => blance = bal.$value);
     speedRate$.subscribe(rate => speedrate = rate.$value);
-    return this.db.object('/users/' + user.uid ).update({
-     balance: speedrate  + blance || 0.00000001
-    });
+    if (blance) {
+      return this.db.object('/users/' + user.uid ).update({
+        balance: speedrate  + blance
+       });
+    }
   }
   withdrawFund(user: firebase.User, balance, amount) {
     return this.db.object('/users/' + user.uid).update({

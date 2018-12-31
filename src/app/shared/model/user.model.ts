@@ -3,5 +3,6 @@ export interface IUser {
     lastname: string;
     walletId: string;
     email: string;
+    isAdmin?: boolean;
     password: string;
 }

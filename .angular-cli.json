@@ -24,7 +24,11 @@
             ],
             "scripts": [
                 "./assets/temp/plugins/jquery/dist/jquery.min.js",
-                "./assets/temp/plugins/bootstrap/dist/js/bootstrap.min.js"
+                "./assets/temp/js/sb-admin.min.js",
+                "./assets/drift/js/script.js",
+                "./assets/user/js/popper.min.js",
+                "./assets/user/js/bootstrap-material-design.min.js",
+                "./assets/user/js/material-dashboard.js"
             ],
             "environmentSource": "environments/environment.ts",
             "environments": {

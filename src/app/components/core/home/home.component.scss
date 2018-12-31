@@ -1,0 +1,22 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: sans-serif;
+}
+.price h4{
+    font-family: sans-serif;
+}
+.modal-header{
+    background-color: #31BB9E;
+}
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 1200px;
+        margin: 1.75rem auto;
+    }
+}
+.payBtn{ 
+    margin-right: -20px
+}
+.icon .fas {
+    font-size: 5em;
+    margin-bottom: 20px
+}

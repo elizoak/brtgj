@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
 import { WalletService } from '../../../shared/services/wallet.service';
 import { Router } from '@angular/router';
+import { OrdersService } from '../../../shared/services/orders.service';
 
 @Component({
     selector: 'app-home',
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
     showWithdraw = false;
+    showWithdrawLimit = false;
     time = 0.00000000;
     timestorage;
     userStatus;
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
       private afAuth: AngularFireAuth,
       private userSrv: UserService,
       private router: Router,
+      private orderSrv: OrdersService,
       private walletSrv: WalletService) {
         this.notifier = notifierService;
     }
@@ -53,23 +56,36 @@ export class HomeComponent implements OnInit {
     }
     cancelWithdraw() {
       this.showWithdraw = false;
+      this.showWithdrawLimit = false;
     }
     withdrawBTC(form) {
       if (form.valid) {
-        let amount = this.amount.value;
-        if ((amount >= 0.0035) && (amount < 0.0087)) {
+        const amount = this.amount.value;
+        const d = new Date();
+        const date = d.toDateString();
+        const time = d.toTimeString();
+        const dateTime = `${date} ${time}`;
+        const order =  {date:  dateTime, amount: amount, userId: this.userStatus.uid};
+      if (amount < this.balance) {
+        if ((this.balance > 0.0034) && (amount > 0.0034) ) {
           console.log('withdraw');
           this.walletSrv.withdrawFund(this.userStatus, this.balance, amount)
             .then(() => {
               this.notifier.notify('success', 'wihthdraw successful');
-              this.router.navigate(['/']);
+              this.orderSrv.storeOrders(order);
+              this.showWithdraw = false;
+              this.showWithdrawLimit = false;
+              this.router.navigate(['/account']);
             })
             .catch(err => console.log(err));
-        } else if (amount > 0.0087) {
-          console.log('amount is too large');
-        } else {
-          console.log('insufficient fund');
+        }  else {
+          // console.log(order);
+          this.showWithdrawLimit = true;
+          // console.log('insufficient fund');
         }
+      } else {
+        this.showWithdrawLimit = true;
+      }
       }
     }
     clock() {

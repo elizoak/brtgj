@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" routerLink="/admin">DailyCryptomine</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navbar Search -->
+
+
+
+
+  </nav>
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/admin">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/admin">
+            <i class="fas fa-fw fa-users"></i>
+            <span>User</span></a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/withdraw">
+          <i class="fas fa-fw fa-money-bill"></i>
+          <span>Withdraw</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin">
+          <i class="fas fa-fw fa-coins"></i>
+          <span>Deposit</span></a>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li> 
+          <li class="breadcrumb-item active">User</li>
+        </ol>
+
+        <!-- Icon Cards-->
+      </div>
+      <!-- /.container-fluid -->
+      <div class="container">
+          <form #f='ngForm' (ngSubmit)='update(f.value)'  *ngIf="user">
+              <div class="form-group row">
+               <div class="col-2 mt-2">
+                  <label for="balance">Balance</label>
+               </div>
+               <div class="col-5 pull-left">
+                  <input #balance="ngModel" [(ngModel)]="user.balance" name="balance" type="number" class="form-control" id="balance"  >
+               </div> 
+              </div>
+
+              <div class="form-group row"> 
+                  <div class="col-2 mt-2">
+                     <label for="speedRate">SpeedRate</label>
+                  </div>
+                  <div class="col-5 pull-left">
+                     <input #speedRate="ngModel" [(ngModel)]="user.speedRate" name="speedRate" type="number" class="form-control" id="speedRate" >
+                  </div>
+                 </div>
+           
+        
+              <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+      </div> 
+
+      
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>

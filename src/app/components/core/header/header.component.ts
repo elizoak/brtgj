@@ -1,13 +1,13 @@
 import { UserService } from './../../../shared/services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from './../../../shared/services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   userStatus;
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
       );
     }
     });
-  }
+  } 
 
   ngOnInit() {
   }

@@ -1,0 +1,116 @@
+<html>
+  <div class="wrapper bg-color-primary" >
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo bg-color-main text-center">
+        <a routerLink="/" class="simple-text text-light logo-normal">
+         DailyCryptomine
+        </a>
+        <button (click)="logout()" class="btn btn-warning btn-sm">
+          <span class="fa fa-sign-out"></span>
+          logout
+        </button>
+      </div>
+      <div class="sidebar-wrapper bg-color-main">
+        <ul class="nav">
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/account/dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/account/profile">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/account/withdraw">
+              <i class="material-icons">money</i>
+              <p>Withdraw</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/account/deposit">
+              <i class="fa fa-bitcoin"></i>
+              <p>Deposit</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/account/trans">
+              <i class="material-icons">history</i>
+              <p>Transactions</p>
+            </a>
+          </li>
+
+      
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand ">
+              <h3><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h3>
+         
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+        
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content bg-color-primary">
+        <div class="container-fluid">
+         
+          
+        </div>
+      </div>
+      <footer class="footer bg-color-main">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul class="text-light">
+              <li >
+                <a href="https://www.creative-tim.com">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="https://creative-tim.com/presentation">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">
+                  Testimony
+                </a>
+              </li>
+              <li>
+                <a href="https://www.creative-tim.com/license">
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right text-light">
+            &copy; 2019 All Right Reserved
+
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</html>
