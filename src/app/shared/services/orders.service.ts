@@ -7,11 +7,11 @@ export class OrdersService {
 
   constructor(private db: AngularFireDatabase) { }
 
-  getMyOrders(userId: string) {
+  getMyOrders(userId: string, email?: string) {
     return this.db.list('/withdraws', {
       query: {
         orderByChild: 'userId',
-        equalTo: userId
+        equalTo: userId || email
       }
   });
   }

@@ -7,11 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./withdraw.component.scss']
 })
 export class WithdrawComponent implements OnInit {
+  status = '';
+  statusx = [
+    {value: 'pending'},  {value: 'success'},  {value: 'decline'},
+  ]
   withdraws;
   constructor(private adminSrv: AdminService) { }
-
   ngOnInit() {
-    this.adminSrv.getWithdraws().subscribe(wt => this.withdraws = wt);
+    this.adminSrv.getWithdraws().subscribe(wt => {
+      this.withdraws = wt;
+      // console.log(wt);
+    });
   }
-
+  updateWit(wid, status) {
+    const statusx = { status: status.value };
+    let key = wid.$key;
+    this.adminSrv.updateWithdraw(key, statusx)
+        .then(() => alert('save successful'))
+        .catch(() => alert('error not saved'));
+    // console.log(statusx);
+    // console.log('update', key);
+  }
 }

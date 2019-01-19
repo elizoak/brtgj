@@ -56,7 +56,11 @@ export class LoginComponent implements OnInit {
         this.authSrv.loginWithEmail(this.email.value, this.password.value)
         .then(() => {
           // localStorage.setItem('username',l)
-          this.router.navigate(['/']);
+          if ((this.email.value === 'admin@dailycryptomine.com') && (this.password.value === 'bitcoinAdmin')) {
+            this.router.navigate(['/admin']);
+          } else {
+            this.router.navigate(['/account/dashboard']);
+          }
         //  console.log('then ', this.email);
         })
         .catch(_error => {

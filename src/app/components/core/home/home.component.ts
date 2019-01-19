@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
               this.notifier.notify('success', 'wihthdraw successful');
               this.orderSrv.storeOrders(order);
               this.showWithdraw = false;
-              this.showWithdrawLimit = false;
+              this.showWithdrawLimit = false; 
               this.router.navigate(['/account']);
             })
             .catch(err => console.log(err));

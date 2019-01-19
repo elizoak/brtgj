@@ -58,7 +58,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand ">
-              <h3><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h3>
+              <h4 class="head"><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h4>
          
             </a>
           </div>
@@ -74,42 +74,95 @@
       <!-- End Navbar -->
       <div class="content bg-color-primary">
         <div class="container-fluid">
-         
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header card-header-primary" >
+                        <h4 class="card-title ">All Withdraw</h4>
+                      </div> 
+                      <div class="card-body">
+                        <h5 *ngIf="withdraws.length < 1">No Withdraw</h5>
+                        <div class="table-responsive" *ngIf="withdraws.length > 0">
+                          <table class="table">
+                            <thead class=" text-primary">
+                              <th>
+                                Date
+                              </th>
+                              <th>
+                                Amount
+                              </th>
+                              <th>
+                                Status
+                              </th>
+                           
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let wid of withdraws">
+                                <td>
+                                    {{ wid.date | date}}
+                                </td>
+                                <td>
+                                    - {{wid.amount}} BTC
+                                </td>
+                                <td class="text-warning">
+                                  Pending
+                                </td>
+                              </tr>
+                            
+                       
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-header card-header-primary" >
+                          <h4 class="card-title ">All Deposit</h4>
+                        </div> 
+                        <div class="card-body">
+                          <h5 >No Deposit</h5>
+                          
+                        </div>
+                      </div>
+                    </div>
+              </div>
           
         </div>
       </div>
       <footer class="footer bg-color-main">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul class="text-light">
-              <li >
-                <a href="https://www.creative-tim.com">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Testimony
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  About Us
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right text-light">
-            &copy; 2019 All Right Reserved
-
+          <div class="container-fluid">
+            <nav class="float-left">
+              <ul class="text-light">
+                <li >
+                  <a routerLink="/">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/faq">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/testimony">
+                    Testimony
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/about-us">
+                    About Us
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright float-right text-light">
+              &copy; 2019 All Right Reserved
+  
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
     </div>
   </div>
 

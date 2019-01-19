@@ -6,10 +6,10 @@ import { RouterModule } from '@angular/router';
 import { TestimonyComponent } from './testimony/testimony.component';
 import { SharedModule } from '../../shared/shared.module';
 const Route = [
-  { path: 'payout', component: PayoutComponent},
+  { path: 'about-us', component: PayoutComponent},
   { path: 'faq', component: FaqComponent},
   { path: 'testimony', component: TestimonyComponent}
-]
+];
 
 @NgModule({
   imports: [

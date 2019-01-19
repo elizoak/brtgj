@@ -1,3 +1,4 @@
+import { OrdersService } from './../../../shared/services/orders.service';
 import { UserService } from './../../../shared/services/user.service';
 import { AuthService } from './../../../shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,9 +12,11 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class TransactionComponent implements OnInit {
   userStatus; userDetails = { name: '', lastname: '', };
+  withdraws = [];
   constructor(
     private authSrv: AuthService,
     private router: Router,
+    private orderSrv: OrdersService,
     private userSrv: UserService,
     private afAuth: AngularFireAuth
   ) {
@@ -29,6 +32,11 @@ export class TransactionComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.afAuth.authState.switchMap(auth => this.orderSrv.getMyOrders(auth.uid))
+    .subscribe(wt => {
+      this.withdraws = wt;
+      // console.log(this.withdraws);
+    });
 
   }
   logout() {

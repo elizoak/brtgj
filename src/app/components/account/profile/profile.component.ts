@@ -10,7 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  userStatus; userDetails = { name: '', lastname: '', };
+  userStatus; userDetails = { name: '', lastname: '', walletId: '', speedRate: 0, balance: 0, email: '' };
   constructor(
     private authSrv: AuthService,
     private router: Router,

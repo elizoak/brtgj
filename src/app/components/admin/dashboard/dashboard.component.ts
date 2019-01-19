@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.adminSrv.getAllUser().subscribe(user => this.users = user);
-    this.adminSrv.getWithdraws().subscribe(wt =>this.withdraw = wt);
+    this.adminSrv.getWithdraws().subscribe(wt => this.withdraw = wt);
   }
 
 }

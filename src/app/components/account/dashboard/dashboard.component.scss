@@ -5,11 +5,15 @@
 //     color: black;
 // }
 .big-icon{
-    font-size: 50px;
+    font-size: 40px;
 }
 .bg-color-main{
     background-color:#1f2532;
 }
 .bg-color-primary{
     background-color: #31BB9E
+}
+.navbar-brand .head{
+    text-transform: capitalize;
+   font-weight: bold;
 }

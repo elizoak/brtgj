@@ -58,7 +58,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand ">
-              <h3><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h3>
+              <h4 class="head"><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h4>
          
             </a>
           </div>
@@ -74,42 +74,63 @@
       <!-- End Navbar -->
       <div class="content bg-color-primary">
         <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card card-profile">
+                  <div class="card-avatar bg-dark text-light">
+                      <span class="fa fa-user-circle fa-5x"></span>
+                  </div>
+                  <div class="card-body"> 
          
+                    <h3 class="card-title">Name: {{userDetails.name}} {{userDetails.lastname}}</h3>
+                    <h4 class="card-description">Email: {{userDetails.email}}</h4> 
+                    <h4 class="card-description">Wallet Address: {{userDetails.walletId}}</h4> 
+                    <h4 class="card-description">Balance: {{userDetails.balance | number:'.8-8' }}</h4>
+                    <h4 class="card-description">Profit Per Day: {{userDetails.speedRate * 60000 | number:'.4-5'  }}</h4>
+                      
+                    <a routerLink="/account/deposit" class="btn btn-primary btn-round">
+                      <span class="fa fa-btc"></span>
+                      Deposit
+                    </a>
+                  </div>
+                </div>
+              </div>
+         </div>
           
         </div>
       </div>
       <footer class="footer bg-color-main">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul class="text-light">
-              <li >
-                <a href="https://www.creative-tim.com">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Testimony
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  About Us
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right text-light">
-            &copy; 2019 All Right Reserved
-
+          <div class="container-fluid">
+            <nav class="float-left">
+              <ul class="text-light">
+                <li >
+                  <a routerLink="/">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/faq">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/testimony">
+                    Testimony
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/about-us">
+                    About Us
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright float-right text-light">
+              &copy; 2019 All Right Reserved
+  
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
     </div>
   </div>
 

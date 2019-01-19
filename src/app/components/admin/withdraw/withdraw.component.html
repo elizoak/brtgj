@@ -62,7 +62,10 @@
               <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Amount</th>
-                <th scope="col">UserId</th>
+                <th scope="col">Email</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+                
 
               </tr>
             </thead>
@@ -70,8 +73,20 @@
               <tr *ngFor="let wid of withdraws">
                 <td>{{wid.date | date:'medium' }}</td>
                 <td>{{wid.amount}}</td>
-                <td>{{wid.userId}}</td>
-  
+                <td>{{ wid.email || wid.userId  }}</td>
+                <td>
+                  <div class="form-group">
+                    <select #status="ngModel" class="form-control" [(ngModel)]="wid.status" >
+                      <option  *ngFor="let st of statusx" [value]="st.value" >
+                        {{st.value}}
+                      </option> 
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-primary" (click)='updateWit(wid, status)'>Save</button>
+                </td>
+   
               </tr>
             </tbody>
           </table>

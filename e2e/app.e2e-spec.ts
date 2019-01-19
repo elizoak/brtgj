@@ -1,3 +1,4 @@
+import { browser } from 'protractor';
 import { AppPage } from './app.po';
 
 describe('angular-ssr-example App', () => {
@@ -9,6 +10,14 @@ describe('angular-ssr-example App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    browser.pause();
+    expect(page.getParagraphText()).toEqual('Our Contacts');
   });
 });
+// describe('Protractor Demo App', function() {
+//   it('should have a title', function() {
+//     browser.get('http://juliemr.github.io/protractor-demo/');
+
+//     expect(browser.getTitle()).toEqual('Super Calculator');
+//   });
+// });

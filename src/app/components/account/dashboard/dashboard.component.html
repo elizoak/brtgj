@@ -58,10 +58,11 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand " > 
-              <h3><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}} </h3>
+              <h4 class="head"><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}} </h4>
          
             </a>
           </div>
+          <br>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -82,7 +83,7 @@
                     <i class="material-icons">account_balance_wallet</i>
                   </div>
                   <p class="card-category">Account Balance</p>
-                  <h5 class="card-title">0.00002343
+                  <h5 class="card-title">{{userDetails.balance | number:'.8-8'}}
                     <small><span class="fa fa-btc" ></span></small>
                   </h5>
                 </div>
@@ -101,7 +102,7 @@
                     <i class="material-icons">money</i>
                   </div>
                   <p class="card-category">Withdraws</p>
-                  <h3 class="card-title">5</h3>
+                  <h3 class="card-title">{{ withdraws.length }}</h3>  
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -118,7 +119,7 @@
                     <i class="fa fa-btc"></i>
                   </div>
                   <p class="card-category">Deposits</p>
-                  <h3 class="card-title">3</h3>
+                  <h3 class="card-title">0</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -134,8 +135,8 @@
                   <div class="card-icon">
                     <i class="fa fa-history"></i>
                   </div>
-                  <p class="card-category">Transactions</p>
-                  <h3 class="card-title">5</h3>
+                  <p class="card-category">Transactions</p> 
+                  <h3 class="card-title">{{ withdraws.length }}</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -155,22 +156,22 @@
           <nav class="float-left">
             <ul class="text-light">
               <li >
-                <a href="https://www.creative-tim.com">
+                <a routerLink="/">
                   Home
                 </a>
               </li>
               <li>
-                <a href="https://creative-tim.com/presentation">
+                <a routerLink="/faq">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="http://blog.creative-tim.com">
+                <a routerLink="/testimony">
                   Testimony
                 </a>
               </li>
               <li>
-                <a href="https://www.creative-tim.com/license">
+                <a routerLink="/about-us">
                   About Us
                 </a>
               </li>

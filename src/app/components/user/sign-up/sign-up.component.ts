@@ -71,7 +71,7 @@ export class SignUpComponent implements OnInit {
               this.userSrv.saveUserData(auth, form.value);
              }
            });
-              this.router.navigate(['/']);
+              this.router.navigate(['/account/dashboard']);
             }
           )
           .catch(_error => {

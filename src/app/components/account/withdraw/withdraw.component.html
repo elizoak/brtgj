@@ -58,7 +58,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand ">
-              <h3><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h3>
+              <h4 class="head"><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h4>
          
             </a>
           </div>
@@ -75,41 +75,128 @@
       <div class="content bg-color-primary">
         <div class="container-fluid">
          
-          
+          <div class="row">
+              <div class="col-md-8 offset-md-2">
+                  <div class="card">
+                    <div class="card-header card-header-primary">
+                      <h4 class="card-title">Withdaw Bitcoin From Balance</h4>
+                      <h5>Min: 0.0035 Max: {{ userDetails.balance | number:'.8-8'}}</h5>
+                    </div>
+                    <div class="card-body">
+                      <form [formGroup]='form' (ngSubmit)="withdrawBTC(form)">
+                        <p class="text-danger" *ngIf="showWithdrawLimit"><b>You have less than 0.0035 BTC on your balance.
+                            Wait for minimum amount</b>.</p>
+                          <p class="text-success" *ngIf="withdrawsuc">Withdraw Successful</p>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">  
+                              <label class="bmd-label-floating">Enter Amount</label>
+                              <input type="number" class="form-control" formControlName='amount'>
+                            </div>
+                            <span *ngIf="amount.invalid && amount.touched" class="text-danger">
+                                amount is required
+                            </span>
+                          </div>
+                         
+                        </div>
+                       
+                      
+                     
+                        <button type="submit" class="btn btn-primary pull-right">Withdraw</button>
+                        <div class="clearfix"></div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary" >
+                    <h4 class="card-title ">All Withdraw</h4>
+                  </div>
+                  <div class="card-body">
+                    <h5 *ngIf="withdraws.length < 1">No Withdraw</h5>
+                    <div class="table-responsive" *ngIf="withdraws.length > 0">
+                      <table class="table">
+                        <thead class=" text-primary">
+                          <th>
+                            Date
+                          </th>
+                          <th>
+                            Amount
+                          </th>
+                          <th>
+                            Status
+                          </th>
+                       
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let wid of withdraws">
+                            <td>
+                                {{ wid.date | date}}
+                            </td>
+                            <td>
+                                - {{wid.amount}} BTC
+                            </td>
+                            <td *ngIf="wid.status === 'pending'" class="text-warning">
+                             {{ wid.status}}
+                            </td>
+                            <td *ngIf="wid.status === 'success'" class="text-success">
+                              {{ wid.status}}
+                             </td>
+                             <td *ngIf="wid.status === 'decline'" class="text-danger">
+                              {{ wid.status}}
+                             </td>
+                             <td *ngIf="!wid.status" class="text-dark">
+                              {{ wid.status}}
+                             </td>
+                          </tr>
+                        
+                   
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
         </div>
       </div>
       <footer class="footer bg-color-main">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul class="text-light">
-              <li >
-                <a href="https://www.creative-tim.com">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Testimony
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  About Us
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right text-light">
-            &copy; 2019 All Right Reserved
-
+          <div class="container-fluid">
+            <nav class="float-left">
+              <ul class="text-light">
+                <li >
+                  <a routerLink="/">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/faq">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/testimony">
+                    Testimony
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/about-us">
+                    About Us
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright float-right text-light">
+              &copy; 2019 All Right Reserved
+  
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
     </div>
   </div>
 

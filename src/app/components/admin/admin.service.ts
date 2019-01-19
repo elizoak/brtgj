@@ -19,4 +19,7 @@ export class AdminService {
   getWithdraws() {
     return this.db.list('/withdraws');
   }
+  updateWithdraw(withdrawId, status) {
+    return this.db.object('/withdraws/' + withdrawId).update(status);
+  }
 }
