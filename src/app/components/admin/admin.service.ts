@@ -4,9 +4,7 @@ import * as firebase from 'firebase';
 
 @Injectable()
 export class AdminService {
-
   constructor(private db: AngularFireDatabase) { }
-
   getAllUser() {
     return this.db.list('/users');
   }

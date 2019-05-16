@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./withdraw.component.scss']
 })
 export class WithdrawComponent implements OnInit {
+  user = { username: '', password: ''};
+  username = ''
   status = '';
   statusx = [
     {value: 'pending'},  {value: 'success'},  {value: 'decline'},
@@ -18,6 +20,9 @@ export class WithdrawComponent implements OnInit {
       this.withdraws = wt;
       // console.log(wt);
     });
+  }
+  login() {
+    console.log(this.user);
   }
   updateWit(wid, status) {
     const statusx = { status: status.value };

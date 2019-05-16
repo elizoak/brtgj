@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , AfterViewInit} from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { NotifierService } from 'angular-notifier';
 import { UserService } from '../../../shared/services/user.service';
@@ -13,7 +13,7 @@ import { OrdersService } from '../../../shared/services/orders.service';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
     showWithdraw = false;
     showWithdrawLimit = false;
     time = 0.00000000;
@@ -50,6 +50,9 @@ export class HomeComponent implements OnInit {
         });
           }
           });
+    }
+    ngAfterViewInit() {
+      this.welcomeMsg();
     }
     withdraw() {
       this.showWithdraw = true;
@@ -95,5 +98,12 @@ export class HomeComponent implements OnInit {
         localStorage.setItem('btcpro', this.timestorage);
         this.timestorage = JSON.parse(localStorage.getItem('btcpro'));
       //  console.log(this.timestorage);
+    }
+    welcomeMsg() {
+      setTimeout(() => {
+        alert(`
+        ATTENTION PLEASE...NOTE THAT ALL DEPOSITS/PAYMENTS SHOULD BE MADE DIRECTLY TO THE COMPANY ACCOUNT/ BITCOIN WALLET ADDRESS, NO PAYMENTS/DEPOSITS SHOULD BE MADE TO ANY ACCOUNT MANAGER.THE COMPANY WILL NOT BE HELD RESPONSIBLE FOR ANY LOSS THAT COMES WITH MAKING PAYMENTS TO ANY ACCOUNTS MANAGER...THANK YOU FOR YOUR UNDERSTANDING AND COOPERATION dailycryptomine@gmail.com...
+        `);
+      }, 5000);
     }
 }
