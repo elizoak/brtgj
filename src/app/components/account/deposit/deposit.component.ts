@@ -10,6 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./deposit.component.scss']
 })
 export class DepositComponent implements OnInit {
+  walletId = '157wJbiUHyNJqwyCay5Wnp3GdqKrWMhtvi';
   userStatus; userDetails = { name: '', lastname: '', };
   constructor(
     private authSrv: AuthService,

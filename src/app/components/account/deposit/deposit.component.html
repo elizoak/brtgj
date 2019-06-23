@@ -48,7 +48,7 @@
             </a>
           </li>
 
-      
+
         </ul>
       </div>
     </div>
@@ -59,7 +59,7 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand ">
               <h4 class="head"><i class="material-icons big-icon">person</i> Welcome, {{userDetails.name}} {{userDetails.lastname}}</h4>
-         
+
             </a>
           </div>
           <br>
@@ -69,7 +69,7 @@
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
-        
+
         </div>
       </nav>
       <!-- End Navbar -->
@@ -80,14 +80,14 @@
         <div class="row">
             <div class="col">
                 <div class="title text-center">
-                 
+
                     <h2 id="version" >Choose Your Version.</h2>
-            
+
                     <p class="text-light">Choose premium version below to increase your affiliate program bonus and earn much more!</p>
                 </div>
             </div>
         </div>
-    
+
         <div class="row">
             <div class="col-md-12">
             <div class="tab-content" id="pills-tabContent">
@@ -99,7 +99,7 @@
                                 <div class="pricing-body">
                                     <div class="price">
                                         <h4 >Buy 0.9 BTC</h4>
-                                       
+
                                     </div>
                                     <div class="progress" style="height: 3px;">
                                         <div class="progress-bar"style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -117,7 +117,7 @@
                                 <div class="pricing-body">
                                     <div class="price">
                                        <h4>Buy 0.5 BTC</h4>
-                                       
+
                                     </div>
                                     <div class="progress" style="height: 3px;">
                                         <div class="progress-bar"style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -135,7 +135,7 @@
                                 <div class="pricing-body">
                                     <div class="price">
                                         <h4>Buy 0.25 BTC</h4>
-                                       
+
                                     </div>
                                     <div class="progress" style="height: 3px;">
                                         <div class="progress-bar"style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -153,7 +153,7 @@
                                 <div class="pricing-body">
                                     <div class="price">
                                         <h4>Buy 0.063 BTC</h4>
-                                       
+
                                     </div>
                                     <div class="progress" style="height: 3px;">
                                         <div class="progress-bar"style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -161,7 +161,7 @@
                                     <p>Earning rate:</p>
                                     <p><b>0.00001 BTC/min</b></p>
                                     <p><b>0.015 BTC per/day</b></p>
-                    
+
                                     <button type="button" class="btn btn-main"  data-toggle="modal" data-target="#myModal">Buy</button>
                                 </div>
                             </div>
@@ -170,35 +170,35 @@
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Tik</div>
             </div>
-                
+
             </div>
-            
+
         </div>
      <ng-container id="modals" >
             <div id="myModal4" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                  
-                     
+
+
                       <div class="modal-content">
                         <div class="modal-header" >
                             <h4 class="modal-title">Upgrade Dailycryptomine to Premium</h4>
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         
+
                         </div>
                         <div class="modal-body">
                           <div class="row text-center">
                               <div class="col-md-8">
                                  <h5>Complete your Deposit</h5>
-                                 <p>In order to upgrade Dailycryptomine to v1.5 please send exactly 
+                                 <p>In order to upgrade Dailycryptomine to v1.5 please send exactly
                                      <b class="text-warning">0.9 BTC</b> to:</p>
-                                <h6 class="text-warning">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</h6>
+                                <h6 class="text-warning">{{walletId}}</h6>
                                     <h5>Waiting For Your Deposit. Status: <b class="text-warning">0 BTC</b> received</h5>
                                     <h6>Your Dailycryptomine will be upgraded automatically after payment is received and confirmed.</h6>
                               </div>
                               <div class="col-md-4">
                                 <h6>Scan QR code using your camera</h6>
                                 <img src="/assets/images/btccode.PNG" alt="btcwallet">
-                                <p class="text-dark">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</p>
+                                <p class="text-dark">{{walletId}}</p>
                             </div>
                           </div>
                         </div>
@@ -206,33 +206,33 @@
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                       </div>
-                  
+
                     </div>
                   </div>
             <div id="myModal3" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                  
-                     
+
+
                       <div class="modal-content">
                         <div class="modal-header" >
                             <h4 class="modal-title">Upgrade Dailycryptomine to Premium</h4>
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         
+
                         </div>
                         <div class="modal-body">
                           <div class="row text-center">
                               <div class="col-md-8">
                                  <h5>Complete your Deposit</h5>
-                                 <p>In order to upgrade Dailycryptomine to v1.4 please send exactly 
+                                 <p>In order to upgrade Dailycryptomine to v1.4 please send exactly
                                      <b class="text-warning">0.5 BTC</b> to:</p>
-                                <h6 class="text-warning">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</h6>
+                                <h6 class="text-warning">{{walletId}}</h6>
                                     <h5>Waiting For Your Deposit. Status: <b class="text-warning">0 BTC</b> received</h5>
                                     <h6>Your Dailycryptomine will be upgraded automatically after payment is received and confirmed.</h6>
                               </div>
                               <div class="col-md-4">
                                 <h6>Scan QR code using your camera</h6>
                                 <img src="/assets/images/btccode.PNG" alt="btcwallet">
-                                <p class="text-dark">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</p>
+                                <p class="text-dark">{{walletId}}</p>
                             </div>
                           </div>
                         </div>
@@ -240,33 +240,33 @@
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                       </div>
-                  
+
                     </div>
                   </div>
             <div id="myModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                  
-                     
+
+
                       <div class="modal-content">
                         <div class="modal-header" >
                             <h4 class="modal-title">Upgrade Dailycryptomine to Premium</h4>
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         
+
                         </div>
                         <div class="modal-body">
                           <div class="row text-center">
                               <div class="col-md-8">
                                  <h5>Complete your Deposit</h5>
-                                 <p>In order to upgrade Dailycryptomine to v1.2 please send exactly 
+                                 <p>In order to upgrade Dailycryptomine to v1.2 please send exactly
                                      <b class="text-warning">0.063 BTC</b> to:</p>
-                                <h6 class="text-warning">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</h6>
+                                <h6 class="text-warning">{{walletId}}</h6>
                                     <h5>Waiting For Your Deposit. Status: <b class="text-warning">0 BTC</b> received</h5>
                                     <h6>Your Dailycryptomine will be upgraded automatically after payment is received and confirmed.</h6>
                               </div>
                               <div class="col-md-4">
                                 <h6>Scan QR code using your camera</h6>
                                 <img src="/assets/images/btccode.PNG" alt="btcwallet">
-                                <p class="text-dark">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</p>
+                                <p class="text-dark">{{walletId}}</p>
                             </div>
                           </div>
                         </div>
@@ -274,33 +274,33 @@
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                       </div>
-                  
+
                     </div>
                   </div>
                   <div id="myModal2" class="modal fade" role="dialog">
                         <div class="modal-dialog">
-                      
-                          
+
+
                           <div class="modal-content">
                             <div class="modal-header" >
                                 <h4 class="modal-title">Upgrade Dailycryptomine to Premium</h4>
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                             
+
                             </div>
                             <div class="modal-body">
                               <div class="row text-center">
                                   <div class="col-md-8">
                                      <h5>Complete your Deposit</h5>
-                                     <p>In order to upgrade Dailycryptomine to v1.3 please send exactly 
+                                     <p>In order to upgrade Dailycryptomine to v1.3 please send exactly
                                          <b class="text-warning">0.25 BTC</b> to:</p>
-                                    <h6 class="text-warning">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</h6>
+                                    <h6 class="text-warning">{{walletId}}</h6>
                                         <h5>Waiting For Your Deposit. Status: <b class="text-warning">0 BTC</b> received</h5>
                                         <h6>Your Dailycryptomine will be upgraded automatically after payment is received and confirmed.</h6>
                                   </div>
                                   <div class="col-md-4">
                                     <h6>Scan QR code using your camera</h6>
                                     <img src="/assets/images/btccode.PNG" alt="btcwallet">
-                                    <p class="text-dark">141mcE2VzzwmSSrdGgA9E7c2gE7jhjSdHZ</p>
+                                    <p class="text-dark">{{walletId}}</p>
                                 </div>
                               </div>
                             </div>
@@ -308,17 +308,17 @@
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                           </div>
-                      
+
                         </div>
                       </div>
      </ng-container>
-     
 
 
-    </div>   	
-</section>  
 
-          
+    </div>
+</section>
+
+
         </div>
       </div>
       <footer class="footer bg-color-main">
@@ -349,7 +349,7 @@
             </nav>
             <div class="copyright float-right text-light">
               &copy; 2019 All Right Reserved
-  
+
             </div>
           </div>
         </footer>
