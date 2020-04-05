@@ -12,3 +12,64 @@
 .notifier__notification--material .notifier__notification-message{
     color: white
   }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .ngx-dropdown-container {
+    /* width: 75% !important; */
+    border: 1px solid #C4C4C4 !important;
+    border-radius: 5px !important;
+    font-size: 14px;
+    color: #7e7f9a !important;
+    background: transparent !important;
+  }
+  
+  #ngx-select-resize>.ngx-dropdown-container {
+    width: 100% !important;
+    border: 1px solid #C4C4C4 !important;
+    border-radius: 5px !important;
+    font-size: 14px;
+    color: #7e7f9a !important;
+    background: transparent !important;
+  }
+  
+  .ngx-dropdown-container .ngx-dropdown-button {
+    // background-image: url(assets/img/caret_down.svg) !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+    background-size: 1.5ex !important;
+    background-origin: content-box !important;
+    color: #7e7f9a !important;
+    border: none !important;
+    padding: 9px 10px 5px 10px !important;
+  }
+  
+  #ngx-select-resize>.ngx-dropdown-container>.ngx-dropdown-button {
+    // background-image: url(assets/img/caret_down.svg) !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+    background-size: 1.5ex !important;
+    background-origin: content-box !important;
+    color: #7e7f9a !important;
+    border: none !important;
+    padding: 5px 10px 5px 10px !important;
+  }
+  
+  #ngx-select-resize-sub>.ngx-dropdown-container {
+    width: 76% !important;
+    border: 1px solid #7E7F9A !important;
+    border-radius: 5px !important;
+    font-size: 14px;
+    color: #7e7f9a !important;
+    background: transparent !important;
+  }
+  
+  div .ngx-dropdown-list-container {
+    max-height: 300px !important;
+    overflow: auto !important;
+  }
+  

@@ -58,7 +58,7 @@ export class WithdrawComponent implements OnInit {
   logout() {
     this.authSrv.logout();
     // localStorage.removeItem('username');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']); 
   }
   withdrawBTC(form) {
     if (form.valid) {

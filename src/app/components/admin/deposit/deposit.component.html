@@ -1,0 +1,70 @@
+<div class="container-fluid">
+
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">User</li>
+  </ol>
+
+  <!-- Icon Cards-->
+</div>
+<!-- /.container-fluid -->
+<div class="container">
+   <h2>All Deposit from users</h2>
+
+   <div class="my-5">
+     <div class="row" [formGroup]="form" >
+       <div class="col-md-4">
+         <label for="">Users</label>
+        <ngx-select-dropdown formControlName="user" [options]="users" [config]="config" ></ngx-select-dropdown>
+       </div>
+       <div class="col-md-3">
+         <label for="">Amount</label><br>
+         <input formControlName="amount" class=" form-control" type="number">
+       </div>
+       <div class="col-md-3">
+         <label for="">Status</label><br>
+         <select formControlName="status" class="form-control" name="" id="">
+           <option value="pending">pending</option>
+           <option value="decline">decline</option>
+           <option value="success">success</option>
+         </select>
+        </div>
+        <div class="col-md-2">
+          <label for="">Action</label><br>
+          <button (click)="submit()" [disabled]="form.invalid || loading" type="submit" class="btn btn-primary btn-block ">
+            <span *ngIf="!loading">Submit</span>
+            <span *ngIf="loading">Loading...</span>
+          </button>
+    
+        </div>
+     </div>
+
+   </div>
+   <div class="table-responsive">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+            
+
+          </tr>
+        </thead>
+        <tbody *ngIf="depositList">
+          <tr *ngFor="let deposit of depositList">
+            <td>{{deposit.date | date}}</td>
+            <td>{{deposit.amount}}</td>
+            <td>{{deposit.userEmail}}</td>
+            <td>{{deposit.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+</div>

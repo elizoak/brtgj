@@ -15,6 +15,14 @@ export class OrdersService {
       }
   });
   }
+  getMyDeposit(userId) {
+    return this.db.list('/deposits', {
+      query: {
+        orderByChild: 'userId',
+        equalTo: userId
+      }
+  });
+  }
   storeOrders(order) {
     return this.db.list('/withdraws').push(order);
   }

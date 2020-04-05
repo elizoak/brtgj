@@ -102,10 +102,10 @@
                                     {{ wid.date | date}}
                                 </td>
                                 <td>
-                                    - {{wid.amount}} BTC
+                                    {{wid.amount}} BTC
                                 </td>
                                 <td class="text-warning">
-                                  Pending
+                                  {{wid.status}}
                                 </td>
                               </tr>
                             
@@ -122,8 +122,38 @@
                           <h4 class="card-title ">All Deposit</h4>
                         </div> 
                         <div class="card-body">
-                          <h5 >No Deposit</h5>
-                          
+                          <h5 *ngIf="deposits.length < 1">No Deposits</h5>
+                          <div class="table-responsive" *ngIf="withdraws.length > 0">
+                            <table class="table">
+                              <thead class=" text-primary">
+                                <th>
+                                  Date
+                                </th>
+                                <th>
+                                  Amount
+                                </th>
+                                <th>
+                                  Status
+                                </th>
+                             
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let wid of deposits">
+                                  <td>
+                                      {{ wid.date | date}}
+                                  </td>
+                                  <td>
+                                      - {{wid.amount}} BTC
+                                  </td>
+                                  <td class="text-warning">
+                                    {{wid.status}}
+                                  </td>
+                                </tr>
+                              
+                         
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     </div>

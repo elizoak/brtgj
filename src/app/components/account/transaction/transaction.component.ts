@@ -13,6 +13,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class TransactionComponent implements OnInit {
   userStatus; userDetails = { name: '', lastname: '', };
   withdraws = [];
+  deposits = []
   constructor(
     private authSrv: AuthService,
     private router: Router,
@@ -35,6 +36,12 @@ export class TransactionComponent implements OnInit {
     this.afAuth.authState.switchMap(auth => this.orderSrv.getMyOrders(auth.uid))
     .subscribe(wt => {
       this.withdraws = wt;
+      // console.log(this.withdraws);
+    });
+
+    this.afAuth.authState.switchMap(auth => this.orderSrv.getMyDeposit(auth.uid))
+    .subscribe(wt => {
+      this.deposits = wt;
       // console.log(this.withdraws);
     });
 

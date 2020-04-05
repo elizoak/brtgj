@@ -9,11 +9,14 @@ import { AdminService } from '../admin.service';
 export class DashboardComponent implements OnInit {
   users: any[];
   withdraw: any[];
+  deposits: any[]
   constructor(private adminSrv: AdminService) { }
 
   ngOnInit() {
     this.adminSrv.getAllUser().subscribe(user => this.users = user);
     this.adminSrv.getWithdraws().subscribe(wt => this.withdraw = wt);
+    this.adminSrv.getDeposits().subscribe(wt => this.deposits = wt);
+
   }
 
 }

@@ -20,4 +20,18 @@ export class AdminService {
   updateWithdraw(withdrawId, status) {
     return this.db.object('/withdraws/' + withdrawId).update(status);
   }
+  createDeposit(payload) {
+    const body = {
+      date: Date.now(),
+      amount: payload.amount,
+      userId: payload.user.$key,
+      userEmail: payload.user.email,
+      status: payload.status
+    };
+    console.log(body);
+    return this.db.list('/deposits').push(body);
+  }
+  getDeposits() {
+    return this.db.list('/deposits');
+  }
 }
