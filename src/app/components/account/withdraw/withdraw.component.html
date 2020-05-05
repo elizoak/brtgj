@@ -133,7 +133,7 @@
                        
                         </thead>
                         <tbody>
-                          <tr *ngFor="let wid of withdraws">
+                          <tr *ngFor="let wid of withdraws| paginate: { itemsPerPage: 10, currentPage: p }">
                             <td>
                                 {{ wid.date | date}}
                             </td>
@@ -153,9 +153,10 @@
                               {{ wid.status}}
                              </td>
                           </tr>
-                        
-                   
                         </tbody>
+                        <tfoot>
+                          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </tfoot>
                       </table>
                     </div>
                   </div>

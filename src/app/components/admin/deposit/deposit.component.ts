@@ -8,6 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./deposit.component.scss']
 })
 export class DepositComponent implements OnInit {
+  p = 1;
   users: any[];
   depositList: any[];
   config = { displayKey: 'email', search: true};

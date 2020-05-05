@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./withdraw.component.scss']
 })
 export class WithdrawComponent implements OnInit {
+  p = 1;
   user = { username: '', password: ''};
   username = ''
   status = '';
@@ -18,6 +19,13 @@ export class WithdrawComponent implements OnInit {
   ngOnInit() {
     this.adminSrv.getWithdraws().subscribe(wt => {
       this.withdraws = wt;
+      this.withdraws.sort(function(a, b) {
+        if (a.date > b.date) {
+          return -1;
+        } else {
+          return 1;
+        }
+      })
       // console.log(wt);
     });
   }

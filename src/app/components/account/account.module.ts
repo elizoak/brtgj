@@ -8,6 +8,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AuthGuardService } from '../../shared/services/auth-guard.service';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 const Route = [
   { path: 'account/dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
@@ -21,6 +22,7 @@ const Route = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     RouterModule.forChild(Route)
   ],
   declarations: [DashboardComponent, ProfileComponent, WithdrawComponent, DepositComponent, TransactionComponent  ]

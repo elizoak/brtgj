@@ -11,9 +11,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./transaction.component.scss']
 })
 export class TransactionComponent implements OnInit {
+  pW = 1; pD = 1;
   userStatus; userDetails = { name: '', lastname: '', };
   withdraws = [];
-  deposits = []
+  deposits = [];
   constructor(
     private authSrv: AuthService,
     private router: Router,
@@ -36,12 +37,26 @@ export class TransactionComponent implements OnInit {
     this.afAuth.authState.switchMap(auth => this.orderSrv.getMyOrders(auth.uid))
     .subscribe(wt => {
       this.withdraws = wt;
+      this.withdraws.sort( function(a, b) {
+        if (a.date < b.date) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
       // console.log(this.withdraws);
     });
 
     this.afAuth.authState.switchMap(auth => this.orderSrv.getMyDeposit(auth.uid))
     .subscribe(wt => {
       this.deposits = wt;
+      this.deposits.sort( function(a, b) {
+        if (a.date > b.date) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
       // console.log(this.withdraws);
     });
 

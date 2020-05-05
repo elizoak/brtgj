@@ -23,12 +23,10 @@
                 <th scope="col">Email</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
-                
-
               </tr>
             </thead>
             <tbody *ngIf="withdraws">
-              <tr *ngFor="let wid of withdraws">
+              <tr *ngFor="let wid of withdraws| paginate: { itemsPerPage: 10, currentPage: p }">
                 <td>{{wid.date | date:'medium' }}</td>
                 <td>{{wid.amount}}</td>
                 <td>{{ wid.email || wid.userId  }}</td>
@@ -44,10 +42,13 @@
                 <td>
                   <button class="btn btn-primary" (click)='updateWit(wid, status)'>Save</button>
                 </td>
-   
               </tr>
             </tbody>
           </table>
+          <div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+          </div>
     </div>
 
     </div>

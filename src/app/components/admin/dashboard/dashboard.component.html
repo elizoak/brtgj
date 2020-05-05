@@ -86,6 +86,11 @@
     <table class="table">
         <thead>
           <tr>
+            <th colspan="2">
+              <input (input)="searchUser($event)" type="search" placeholder="search by email" class=" form-control" id="">
+            </th>
+          </tr>
+          <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Wallet Address</th>
@@ -96,7 +101,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users">
+          <tr *ngFor="let user of users| paginate: { itemsPerPage: 10, currentPage: p }">
             <td>{{user.name }} {{user.lastname}}</td>
             <td>{{user.email}}</td>
             <td>{{user.walletId}}</td>
@@ -105,7 +110,9 @@
             <td>{{user.speedRate | number:".8-8"}}</td>
             <td><a [routerLink]="['/admin/user/', user.$key]">Edit</a> </td>
           </tr>
-
         </tbody>
       </table>
+          <div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
 </div>

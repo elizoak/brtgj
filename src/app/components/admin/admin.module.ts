@@ -11,6 +11,7 @@ import { AuthGuardService } from '../../shared/services/auth-guard.service';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { AdminLayoutComponent } from './admin-layout.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 const Route = [
   {
@@ -30,7 +31,8 @@ const Route = [
     RouterModule.forChild(Route),
     FormsModule,
     ReactiveFormsModule,
-    SelectDropDownModule
+    SelectDropDownModule,
+    NgxPaginationModule
   ],
   declarations: [DashboardComponent, UserformComponent, WithdrawComponent, DepositComponent, AdminLayoutComponent],
   providers: [

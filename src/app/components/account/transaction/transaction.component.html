@@ -97,20 +97,21 @@
                            
                             </thead>
                             <tbody>
-                              <tr *ngFor="let wid of withdraws">
+                              <tr *ngFor="let wid of withdraws| paginate: { itemsPerPage: 10, currentPage: pW, id: 'withdraw' }">
                                 <td>
                                     {{ wid.date | date}}
                                 </td>
                                 <td>
                                     {{wid.amount}} BTC
                                 </td>
-                                <td class="text-warning">
+                                <td class="{{wid.status==='pending' ? 'text-warning': 'text-success'}}">
                                   {{wid.status}}
                                 </td>
                               </tr>
-                            
-                       
                             </tbody>
+                            <tfoot>
+                              <pagination-controls (pageChange)="pW = $event" id="withdraw"></pagination-controls>
+                            </tfoot>
                           </table>
                         </div>
                       </div>
@@ -138,22 +139,23 @@
                              
                               </thead>
                               <tbody>
-                                <tr *ngFor="let wid of deposits">
+                                <tr *ngFor="let wid of deposits| paginate: { itemsPerPage: 10, currentPage: pD, id: 'deposit' }">
                                   <td>
                                       {{ wid.date | date}}
                                   </td>
                                   <td>
-                                      - {{wid.amount}} BTC
+                                      {{wid.amount}} BTC
                                   </td>
-                                  <td class="text-warning">
+                                  <td class="{{wid.status==='pending' ? 'text-warning': 'text-success'}}">
                                     {{wid.status}}
                                   </td>
                                 </tr>
-                              
-                         
                               </tbody>
+                              <tfoot>
+                                <pagination-controls (pageChange)="pD = $event" id="deposit"></pagination-controls>
+                              </tfoot>
                             </table>
-                          </div>
+                          </div> 
                         </div>
                       </div>
                     </div>

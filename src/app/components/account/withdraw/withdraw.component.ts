@@ -14,6 +14,7 @@ import { NotifierService } from 'angular-notifier';
 })
 export class WithdrawComponent implements OnInit {
   userStatus; userDetails = { name: '', lastname: '', balance: 0 };
+  p = 1;
   withdraws = [];
   showWithdrawLimit = false; withdrawsuc = false;
   balance;
@@ -51,6 +52,13 @@ export class WithdrawComponent implements OnInit {
     this.afAuth.authState.switchMap(auth => this.orderSrv.getMyOrders(auth.uid, auth.email))
     .subscribe(wt => {
       this.withdraws = wt;
+      this.withdraws.sort( function(a, b) {
+        if (a.date < b.date) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
       // console.log(this.withdraws);
     });
 
