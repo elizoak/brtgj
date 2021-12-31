@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               this.notifier.notify('success', 'wihthdraw successful');
               this.orderSrv.storeOrders(order);
               this.showWithdraw = false;
-              this.showWithdrawLimit = false; 
+              this.showWithdrawLimit = false;
               this.router.navigate(['/account']);
             })
             .catch(err => console.log(err));
@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     welcomeMsg() {
       setTimeout(() => {
         alert(`
-        ATTENTION PLEASE...NOTE THAT ALL DEPOSITS/PAYMENTS SHOULD BE MADE DIRECTLY TO THE COMPANY ACCOUNT/ BITCOIN WALLET ADDRESS, NO PAYMENTS/DEPOSITS SHOULD BE MADE TO ANY ACCOUNT MANAGER.THE COMPANY WILL NOT BE HELD RESPONSIBLE FOR ANY LOSS THAT COMES WITH MAKING PAYMENTS TO ANY ACCOUNTS MANAGER...THANK YOU FOR YOUR UNDERSTANDING AND COOPERATION dailycryptomine@gmail.com...
+        ATTENTION PLEASE...NOTE THAT ALL DEPOSITS/PAYMENTS SHOULD BE MADE DIRECTLY TO THE COMPANY ACCOUNT/ BITCOIN WALLET ADDRESS, NO PAYMENTS/DEPOSITS SHOULD BE MADE TO ANY ACCOUNT MANAGER.THE COMPANY WILL NOT BE HELD RESPONSIBLE FOR ANY LOSS THAT COMES WITH MAKING PAYMENTS TO ANY ACCOUNTS MANAGER...THANK YOU FOR YOUR UNDERSTANDING AND COOPERATION Dailycryptomine@gmail.com...
         `);
       }, 5000);
     }
