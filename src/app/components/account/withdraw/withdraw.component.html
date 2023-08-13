@@ -8,7 +8,7 @@
     -->
       <div class="logo bg-color-main text-center">
         <a routerLink="/" class="simple-text text-light logo-normal">
-         DailyCryptomine
+         SHIBA TOKEN MINER
         </a>
         <button (click)="logout()" class="btn btn-warning btn-sm">
           <span class="fa fa-sign-out"></span>
@@ -37,7 +37,7 @@
           </li>
           <li class="nav-item ">
             <a class="nav-link" routerLink="/account/deposit">
-              <i class="fa fa-bitcoin"></i>
+              <i class="fa fa-money"></i>
               <p>Deposit</p>
             </a>
           </li>
@@ -79,12 +79,12 @@
               <div class="col-md-8 offset-md-2">
                   <div class="card">
                     <div class="card-header card-header-primary">
-                      <h4 class="card-title">Withdaw Bitcoin From Balance</h4>
+                      <h4 class="card-title">Withdaw Shib Token From Balance</h4>
                       <h5>Min: 0.0035 Max: {{ userDetails.balance | number:'.8-8'}}</h5>
                     </div>
                     <div class="card-body">
-                      <form [formGroup]='form' (ngSubmit)="withdrawBTC(form)">
-                        <p class="text-danger" *ngIf="showWithdrawLimit"><b>You have less than 0.0035 BTC on your balance.
+                      <form [formGroup]='form' (ngSubmit)="withdraw$SHIB(form)">
+                        <p class="text-danger" *ngIf="showWithdrawLimit"><b>You have less than 0.0035 $SHIB on your balance.
                             Wait for minimum amount</b>.</p>
                           <p class="text-success" *ngIf="withdrawsuc">Withdraw Successful</p>
                         <div class="row">
@@ -138,7 +138,7 @@
                                 {{ wid.date | date}}
                             </td>
                             <td>
-                                - {{wid.amount}} BTC
+                                - {{wid.amount}} $SHIB
                             </td>
                             <td *ngIf="wid.status === 'pending'" class="text-warning">
                              {{ wid.status}}

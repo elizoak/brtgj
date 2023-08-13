@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.showWithdraw = false;
       this.showWithdrawLimit = false;
     }
-    withdrawBTC(form) {
+    withdraw$SHIB(form) {
       if (form.valid) {
         const amount = this.amount.value;
         const d = new Date();
@@ -95,14 +95,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.time  = this.time + 0.00000001;
    //     console.log(this.time);
         this.timestorage =  JSON.stringify(this.time);
-        localStorage.setItem('btcpro', this.timestorage);
-        this.timestorage = JSON.parse(localStorage.getItem('btcpro'));
+        localStorage.setItem('$SHIBpro', this.timestorage);
+        this.timestorage = JSON.parse(localStorage.getItem('$SHIBpro'));
       //  console.log(this.timestorage);
     }
     welcomeMsg() {
       setTimeout(() => {
         alert(`
-        ATTENTION PLEASE...NOTE THAT ALL DEPOSITS/PAYMENTS SHOULD BE MADE DIRECTLY TO THE COMPANY ACCOUNT/ BITCOIN WALLET ADDRESS, NO PAYMENTS/DEPOSITS SHOULD BE MADE TO ANY ACCOUNT MANAGER.THE COMPANY WILL NOT BE HELD RESPONSIBLE FOR ANY LOSS THAT COMES WITH MAKING PAYMENTS TO ANY ACCOUNTS MANAGER...THANK YOU FOR YOUR UNDERSTANDING AND COOPERATION Dailycryptomine@gmail.com...
+        ATTENTION PLEASE...NOTE THAT ALL DEPOSITS/PAYMENTS SHOULD BE MADE DIRECTLY TO THE COMPANY ACCOUNT/ Shib Token WALLET ADDRESS, NO PAYMENTS/DEPOSITS SHOULD BE MADE TO ANY ACCOUNT MANAGER.THE COMPANY WILL NOT BE HELD RESPONSIBLE FOR ANY LOSS THAT COMES WITH MAKING PAYMENTS TO ANY ACCOUNTS MANAGER...THANK YOU FOR YOUR UNDERSTANDING AND COOPERATION SHIBA TOKEN MINER@gmail.com...
         `);
       }, 5000);
     }

@@ -68,7 +68,7 @@ export class WithdrawComponent implements OnInit {
     // localStorage.removeItem('username');
     this.router.navigate(['/login']); 
   }
-  withdrawBTC(form) {
+  withdraw$SHIB(form) {
     if (form.valid) {
       this.withdrawsuc = false;
       const amount = this.amount.value;

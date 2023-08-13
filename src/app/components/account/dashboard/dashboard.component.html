@@ -8,7 +8,7 @@
     -->
       <div class="logo bg-color-main text-center">
         <a routerLink="/" class="simple-text text-light logo-normal">
-         DailyCryptomine
+         SHIBA TOKEN MINER
         </a>
         <button (click)="logout()" class="btn btn-warning btn-sm">
           <span class="fa fa-sign-out"></span>
@@ -37,7 +37,7 @@
           </li>
           <li class="nav-item ">
             <a class="nav-link" routerLink="/account/deposit">
-              <i class="fa fa-bitcoin"></i>
+              <i class="fa fa-money"></i>
               <p>Deposit</p>
             </a>
           </li>
@@ -84,7 +84,7 @@
                   </div>
                   <p class="card-category">Account Balance</p>
                   <h5 class="card-title">{{userDetails.balance | number:'.8-8'}}
-                    <small><span class="fa fa-btc" ></span></small>
+                    <small>$SHIB</small>
                   </h5>
                 </div>
                 <div class="card-footer">
@@ -116,7 +116,7 @@
               <div class="card card-stats">
                 <div class="card-header card-header-danger card-header-icon">
                   <div class="card-icon">
-                    <i class="fa fa-btc"></i>
+                    <i class="fa fa-money"></i>
                   </div>
                   <p class="card-category">Deposits</p>
                   <h3 class="card-title">{{deposits.length}}</h3>
