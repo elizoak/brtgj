@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
 import { UserService } from '../../../shared/services/user.service';
+import { COUNRTIES } from '../../../resources/countries';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,6 +14,7 @@ import { UserService } from '../../../shared/services/user.service';
 export class SignUpComponent implements OnInit {
   error: { name: string, message: string } = { name: '', message: '' };
   userInfoId;
+  countries = COUNRTIES;
   constructor(private router: Router,
               private afAuth: AngularFireAuth,
               private authSrv: AuthService,
@@ -30,7 +32,9 @@ export class SignUpComponent implements OnInit {
     email: new FormControl('', Validators.required),
     password: new FormControl(
         '', [Validators.required, Validators.minLength(4)]
-        )
+        ),
+    country: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
   });
   ngOnInit() {
   }
@@ -49,6 +53,8 @@ export class SignUpComponent implements OnInit {
   get password() {
     return this.form.get('password');
   }
+  cntrlName(field) {return this.form.get(field); }
+
   onSubmit(form) {
     console.log(form);
     if (form.valid) {

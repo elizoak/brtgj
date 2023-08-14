@@ -34,6 +34,21 @@
                 </span>
             </div>
             <div class="form-group">
+              <input type="tel" class="form-control"  placeholder="Phone Number" formControlName='phone'>
+              <span *ngIf="cntrlName('phone').invalid && cntrlName('phone').touched">
+                  phone number is required
+                </span>
+            </div>
+            <div class="form-group">
+              <select class="form-control" formControlName="country">
+                <option value="">Select country</option>
+                <option [value]="item" *ngFor="let item of countries">{{item}}</option>
+              </select>
+              <span *ngIf="cntrlName('country').invalid && cntrlName('country').touched">
+                  country is required
+                </span>
+            </div>
+            <div class="form-group">
               <input type="password" class="form-control"  placeholder="Password" formControlName='password'>
               <span *ngIf="password.invalid && password.touched">
                   <span *ngIf="password.errors.required">password is required</span>

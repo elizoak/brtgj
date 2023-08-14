@@ -11,13 +11,14 @@ import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './components/core/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/core/footer/footer.component';
+import { Home2Component } from './components/core/home-2/home-2.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-
+        Home2Component
     ],
     imports: [
         CommonModule,
