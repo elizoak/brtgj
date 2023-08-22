@@ -10,7 +10,8 @@
             "outDir": "dist-browser",
             "assets": [
                 "assets",
-                "favicon.ico"
+                "favicon.ico",
+                "_redirects"
             ],
             "index": "index.html",
             "main": "browser.main.ts",
@@ -19,6 +20,7 @@
             "tsconfig": "browser.tsconfig.app.json",
             "testTsconfig": "tsconfig.spec.json",
             "prefix": "app",
+            
             "styles": [
                 "styles.scss"
             ],
