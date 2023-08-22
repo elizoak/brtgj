@@ -83,8 +83,27 @@
                     <i class="material-icons">account_balance_wallet</i>
                   </div>
                   <p class="card-category">Account Balance</p>
-                  <h5 class="card-title">{{userDetails.balance | number:'.8-8'}}
+                  <h5 class="card-title">{{userDetails.balance | number:'.2'}}
                     <small>$SHIB</small>
+                  </h5>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons text-info">fast_forward</i>
+                    <a  routerLink="/account/profile">Go To Account</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon" style="background: blueviolet;">
+                    <i class="material-icons">account_balance_wallet</i>
+                  </div>
+                  <p class="card-category">Currency</p>
+                  <h5 class="card-title">{{(userDetails.balance * shibToUsd) | number:'.2'}}
+                    <small>USD</small>
                   </h5>
                 </div>
                 <div class="card-footer">
@@ -187,3 +206,31 @@
   </div>
 
 </html>
+<ng-container>
+  <button id="openWelcomeModalBtn" type="button" class="btn btn-main d-none"  data-toggle="modal" data-target="#welcomeMsg">Open Modal</button>
+  <div id="welcomeMsg" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <div class="row text-center">
+              <div class="col-md-12 text-dark">
+                  <h5>Welcome on Board</h5>
+
+                  <h6>Dear {{userDetails.name}},</h6>
+                  <p>Thanks for choosing us and Trusting us
+                    Kindly make your first deposit in other to start mining on your account,</p>
+
+                    <p>ignore if you have made your first deposit</p>
+              </div>
+     
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-container>

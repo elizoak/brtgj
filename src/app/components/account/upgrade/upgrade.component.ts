@@ -5,14 +5,14 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-upgrade',
+  templateUrl: './upgrade.component.html',
+  styleUrls: ['./upgrade.component.scss']
 })
-export class ProfileComponent implements OnInit {
-  userStatus; userDetails = { name: '', lastname: '', walletId: '', speedRate: 0, balance: 0, email: '' };
-  shibToUsd = 0.0000080;
+export class UpgradeComponent implements OnInit {
 
+  walletId = '0xF9Eb4A6B97caF17557D2905cc8E5056bEc1bcF62';
+  userStatus; userDetails = { name: '', lastname: '', };
   constructor(
     private authSrv: AuthService,
     private router: Router,
@@ -38,5 +38,6 @@ export class ProfileComponent implements OnInit {
     // localStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
+
 
 }

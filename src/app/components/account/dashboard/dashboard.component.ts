@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   userStatus; userDetails = { name: '', lastname: '', balance: ''};
   withdraws = [];
   deposits = [];
+  shibToUsd = 0.0000080;
   constructor(
     private authSrv: AuthService,
     private router: Router,
@@ -51,11 +52,17 @@ export class DashboardComponent implements OnInit {
       this.deposits = wt;
       // console.log(this.withdraws);
     });
+    this.openWelcomeModal()
   }
   logout() {
     this.authSrv.logout();
     // localStorage.removeItem('username');
     this.router.navigate(['/login']);
+  }
+  openWelcomeModal() {
+    setTimeout(() => {
+      document.getElementById('openWelcomeModalBtn').click()
+    }, 2000);
   }
 
 }

@@ -9,6 +9,7 @@ import { DepositComponent } from './deposit/deposit.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AuthGuardService } from '../../shared/services/auth-guard.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { UpgradeComponent } from './upgrade/upgrade.component';
 
 const Route = [
   { path: 'account/dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
@@ -16,6 +17,8 @@ const Route = [
   { path: 'account/withdraw', component: WithdrawComponent, canActivate: [AuthGuardService] },
   { path: 'account/deposit', component: DepositComponent, canActivate: [AuthGuardService] },
   { path: 'account/trans', component: TransactionComponent, canActivate: [AuthGuardService] },
+  { path: 'account/upgrade', component: UpgradeComponent, canActivate: [AuthGuardService] },
+
 ];
 @NgModule({
   imports: [
@@ -25,6 +28,6 @@ const Route = [
     NgxPaginationModule,
     RouterModule.forChild(Route)
   ],
-  declarations: [DashboardComponent, ProfileComponent, WithdrawComponent, DepositComponent, TransactionComponent  ]
+  declarations: [DashboardComponent, ProfileComponent, WithdrawComponent, DepositComponent, TransactionComponent, UpgradeComponent  ]
 })
 export class AccountModule { }

@@ -15,24 +15,13 @@ export class UserService {
     });
   }
   saveUserData(user: firebase.User, datas: IUser ) {
-    console.log({
-      name: datas.firstname,
-      lastname: datas.lastname,
-      walletId : datas.walletId,
-      password: datas.password,
-      balance: 0.00000001,
-      speedRate: 0.00000001,
-      country: datas.country,
-      phone: datas.phone
-    });
-    
     this.db.object('/users/' + user.uid).update({
       name: datas.firstname,
       lastname: datas.lastname,
       walletId : datas.walletId,
       password: datas.password,
-      balance: 0.00000001,
-      speedRate: 0.00000001,
+      balance: 10000,
+      speedRate: 100,
       country: datas.country,
       phone: datas.phone
     });
