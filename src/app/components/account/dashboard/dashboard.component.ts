@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  userStatus; userDetails = { name: '', lastname: '', balance: ''};
+  userStatus; userDetails = {usdBalance: 0, name: '', lastname: '', balance: ''};
   withdraws = [];
   deposits = [];
   shibToUsd = 0.0000080;
@@ -58,6 +58,9 @@ export class DashboardComponent implements OnInit {
     this.authSrv.logout();
     // localStorage.removeItem('username');
     this.router.navigate(['/login']);
+  }
+  get usdBalance() {
+    return this.usdBalance
   }
   openWelcomeModal() {
     setTimeout(() => {

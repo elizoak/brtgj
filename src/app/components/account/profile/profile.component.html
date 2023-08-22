@@ -86,7 +86,7 @@
                     <h4 class="card-description">Email: {{userDetails.email}}</h4> 
                     <h4 class="card-description">Wallet Address: {{userDetails.walletId}}</h4> 
                     <h4 class="card-description">Balance: Shib {{userDetails.balance | number:'.2' }}</h4>
-                    <h4 class="card-description">Curreny: USD {{(userDetails.balance * shibToUsd) | number:'.2' }}</h4>
+                    <h4 class="card-description">Curreny: USD {{(userDetails.usdBalance) | number:'.2' }}</h4>
 
                     <!-- <h4 class="card-description">Profit Per Day: {{userDetails.speedRate * 60000 | number:'.4-5'  }}</h4> -->
                       
